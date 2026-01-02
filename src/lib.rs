@@ -22,3 +22,18 @@ pub fn generate_pdq_from_buffer(input: Buffer) -> Result<Option<PdqResult>> {
         None => Ok(None),
     }
 }
+
+#[napi]
+pub fn hamming_distance(a: Buffer, b: Buffer) -> Result<u32> {
+    if a.len() != b.len() {
+        return Err(Error::new(
+            Status::InvalidArg,
+            "Buffers must be the same length",
+        ));
+    }
+
+    Ok(a.iter()
+        .zip(b.iter())
+        .map(|(x, y)| (x ^ y).count_ones())
+        .sum())
+}
