@@ -11,8 +11,8 @@ pub struct PdqResult {
 
 #[napi]
 pub fn generate_pdq_from_buffer(input: Buffer) -> Result<Option<PdqResult>> {
-    let img = load_from_memory(&input)
-        .map_err(|e| Error::new(Status::InvalidArg, e.to_string()))?;
+    let img =
+        load_from_memory(&input).map_err(|e| Error::new(Status::InvalidArg, e.to_string()))?;
 
     match pdqhash::generate_pdq(&img) {
         Some((hash, quality)) => Ok(Some(PdqResult {

@@ -5,7 +5,7 @@
   "types": "index.d.ts",
   "license": "Apache-2.0",
   "packageManager": "yarn@1.22.22",
-    "author": "Dispherical (https://dispherical.com)",
+  "author": "Dispherical (https://dispherical.com)",
   "scripts": {
     "build": "napi build --release",
     "dev": "napi build",
@@ -17,7 +17,13 @@
     "url": "https://github.com/dispherical/pdqhash-node.git"
   },
   "keywords": [
-    "pdq", "perceptual", "rust", "hash", "image", "picture", "algorithm"
+    "pdq",
+    "perceptual",
+    "rust",
+    "hash",
+    "image",
+    "picture",
+    "algorithm"
   ],
   "engines": {
     "node": ">=14"
